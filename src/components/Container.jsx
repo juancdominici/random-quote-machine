@@ -351,7 +351,8 @@ class Container extends React.Component {
 
         })
     }
-
+    
+    href = ''https://twitter.com/intent/tweet?text=' + {this.state.randomQuoteStr} + ' - ' + {this.state.authorNameStr} + '&hashtags=%23quotemaker'
 
     render() {
         return (
@@ -360,7 +361,7 @@ class Container extends React.Component {
                 <h3 id='author'>{this.state.authorNameStr}</h3>
                 <br/>
                 <button className='button' id='new-quote' onClick={this.randomQuote.bind(this)} onMouseUp={this.ChangeColorFunction.bind(this)}>New quote</button>
-                <a className='twitter-share-button' id='tweet-quote' href='https://twitter.com/intent/tweet?hashtags=quotemaker'><img id='twitter-img' src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.flaticon.com%2Ficons%2Fpng%2F512%2F23%2F23931.png&f=1&nofb=1" alt="Tweet this quote!" /></a>
+                <a className='twitter-share-button' id='tweet-quote' href={this.href}><img id='twitter-img' src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.flaticon.com%2Ficons%2Fpng%2F512%2F23%2F23931.png&f=1&nofb=1" alt="Tweet this quote!" /></a>
             </div>
         );
     }
